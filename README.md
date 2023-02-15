@@ -22,10 +22,7 @@
 - Go to the Directory you created: <code> cd Todo-App </code>
 - make virtual Environment: <code> python -m venv .venv </code>
 - (Linux) Active your venv: <code> source ./venv/bin/activate </code>
-- clone the Project: 
-<code>
-git clone https://github.com/Amirmahdikahdouii/Todo-App-DRF.git
-</code>
+- clone the Project: <code> git clone https://github.com/Amirmahdikahdouii/Todo-App-DRF.git </code>
 - install requirements: <code> pip install requirements.txt </code>
 - migrate all the changes: <code> python manage.py migrate </code>
 - run & enjoy: <code> python manage.py runserver </code>
