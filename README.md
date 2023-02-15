@@ -8,7 +8,7 @@
 - Nothing added yet!
 
 ## Have Todo:
-- [ ] Configure Model layer
+- [x] Configure Model layer
 - [ ] Make Endpoints for making new tasks
 - [ ] Add JWT Authentication
 - [ ] Make Profile for users
