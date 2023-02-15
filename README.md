@@ -1,13 +1,17 @@
 # Todo Application
+
 <p>
     This Application made with Django and Rest Framework.
     If you have idea, add yours and then send pull request to have better project.
 </p>
 
 ## Endpoints:
-- Nothing added yet!
+
+- /api/tasks/ ==> list of all tasks
+- /api/tasks/&lt;pk&gt; ==> task with pk lookup
 
 ## Have Todo:
+
 - [x] Configure Model layer
 - [ ] Make Endpoints for making new tasks
 - [ ] Add JWT Authentication
@@ -18,6 +22,7 @@
 - [ ] Work With Docker
 
 ## Usage:
+
 - make new Directory: <code>mkdir Todo-App </code>
 - Go to the Directory you created: <code> cd Todo-App </code>
 - make virtual Environment: <code> python -m venv .venv </code>
@@ -28,5 +33,6 @@
 - run & enjoy: <code> python manage.py runserver </code>
 
 ## Support me
+
 Please give Star to this Repo and make sure you have followed my account for more.
 Thanks!
