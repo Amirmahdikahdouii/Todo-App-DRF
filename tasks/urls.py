@@ -1,6 +1,15 @@
-from django.urls import path
+from django.urls import path, include
+
+# DRF Router:
+from rest_framework import routers
+
+# Views:
+from .views import TaskViewSet
+
+router = routers.SimpleRouter()
+router.register("tasks", TaskViewSet, basename="task")
 
 app_name = "tasks"
 urlpatterns = [
-    # path("list/")
+    path("", include(router.urls))
 ]
