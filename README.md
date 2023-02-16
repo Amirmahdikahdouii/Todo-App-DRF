@@ -7,80 +7,120 @@
 
 ## Endpoints:
 
-- /api/tasks/ <br>
+- ***/api/tasks/***
   <p>
-  This EndPoint will be able to get list of Tasks and
-  create one.
-  For getting list of Tasks, use GET HTTP Method:
-  <br>
-  <code>
-  $ curl -X GET http://127.0.0.1:8000/api/tasks/  
-  </code>
-  <br>
-  Response:
-  <code>
-  [ <br>
-  {"id":1,"title":"first task","body":"Amir","completed":false,"created":"2023-02-15T20:11:45.210471Z","updated":"2023-02-15T20:11:45.210548Z"}
-  <br> ]
-  </code>
-  <br>
-  For create new Task, use POST HTTP Method:
-  <br>
-  <code>
-  $ curl -X POST -d '{"title": "title", "body": "Your Data", "completed": false}' http://127.0.0.1:8000/api/tasks  
-  </code>
-  <br>
-  Response:
-  <code>
-  {"title": "title", "body": "Your Data", "completed": false}
-  </code>
-  </p>
-- /api/tasks/&lt;pk&gt;
+
+This EndPoint will be able to get list of Tasks and
+create one. 
+
+For getting list of Tasks, use `GET` HTTP Method:
+
+```commandline
+curl -X GET http://127.0.0.1:8000/api/tasks/  
+```
+
+Response:
+
+```json
+  [
+  {
+    "id": 1,
+    "title": "first task",
+    "body": "Amir",
+    "completed": false,
+    "created": "2023-02-15T20:11:45.210471Z",
+    "updated": "2023-02-15T20:11:45.210548Z"
+  }
+]
+ ```
+
+For create new Task, use `POST` HTTP Method:
+
+```
+  curl -X POST -d '{"title": "title", "body": "Your Data", "completed": false}' http://127.0.0.1:8000/api/tasks  
+```
+
+Response:
+
+  ```json
+  {
+  "title": "title",
+  "body": "Your Data",
+  "completed": false
+}
+  ```
+
+</p>
+
+- ***/api/tasks/&lt;pk&gt;***
+
 <p>
-  This EndPoint will be able to Retrieve Task, Delete or update that!
-  For getting Task, use GET HTTP Method:
-  <br>
-  <code>
-  $ curl -X GET http://127.0.0.1:8000/api/tasks/1  
-  </code>
-  <br>
-  Response:
-  <code>
-  {"id":1,"title":"first task","body":"Amir","completed":false,"created":"2023-02-15T20:11:45.210471Z","updated":"2023-02-15T20:11:45.210548Z"}
-  </code>
-  <br>
-  For Update Task, use PUT HTTP Method:
-  <br>
-  <code>
-  $ curl -X PUT -d '{"title": "title", "body": "Your Data", "completed": false}' http://127.0.0.1:8000/api/tasks/1  
-  </code>
-  <br>
-  Response:
-  <code>
-  {"title": "title", "body": "Your Data", "completed": false}
-  </code>
-  <br>
-  For Partial Update Task, use PATCH HTTP Method:
-  <br>
-  <code>
-  $ curl -X PATCH -d '{"completed": true}' http://127.0.0.1:8000/api/tasks/1  
-  </code>
-  <br>
-  Response:
-  <code>
-  {"title": "title", "body": "Your Data", "completed": false}
-  </code>
-  <br>
-  For Delete Task, use DELETE HTTP Method:
-  <br>
-  <code>
-  $ curl -X DELETE http://127.0.0.1:8000/api/tasks/1  
-  </code>
-  <br>
-  Response:
-  <code>
-  204 Response
-  </code>
+This EndPoint will be able to Retrieve Task, Delete or update that!
+
+
+For getting Task, use `GET` HTTP Method:
+
+```
+  curl -X GET http://127.0.0.1:8000/api/tasks/1  
+```
+
+Response:
+
+```json
+  {
+  "id": 1,
+  "title": "first task",
+  "body": "Amir",
+  "completed": false,
+  "created": "2023-02-15T20:11:45.210471Z",
+  "updated": "2023-02-15T20:11:45.210548Z"
+}
+```
+
+For Update Task, use `PUT` HTTP Method:
+
+```
+  curl -X PUT -d '{"title": "title", "body": "Your Data", "completed": false}' http://127.0.0.1:8000/api/tasks/1  
+```
+
+Response:
+
+```json
+  {
+  "title": "title",
+  "body": "Your Data",
+  "completed": false
+}
+```
+
+For Partial Update Task, use `PATCH` HTTP Method:
+
+```
+  curl -X PATCH -d '{"completed": true}' http://127.0.0.1:8000/api/tasks/1  
+  ```
+
+Response:
+
+```json
+  {
+  "title": "title",
+  "body": "Your Data",
+  "completed": false
+}
+```
+
+For Delete Task, use `DELETE` HTTP Method:
+
+```
+curl -X DELETE http://127.0.0.1:8000/api/tasks/1  
+```
+
+Response:
+
+```
+204 Response
+```
+
   </p>
 
 ## Have Todo:
@@ -96,16 +136,55 @@
 
 ## Usage:
 
-- make new Directory: <code>mkdir Todo-App </code>
-- Go to the Directory you created: <code> cd Todo-App </code>
-- make virtual Environment: <code> python -m venv .venv </code>
-- (Linux) Active your venv: <code> source ./venv/bin/activate </code>
-- clone the Project: <code> git clone https://github.com/Amirmahdikahdouii/Todo-App-DRF.git </code>
-- install requirements: <code> pip install requirements.txt </code>
-- migrate all the changes: <code> python manage.py migrate </code>
-- run & enjoy: <code> python manage.py runserver </code>
+- make new Directory:
+
+```commandline 
+mkdir Todo-App
+```
+
+- Go to the Directory you created:
+
+```commandline
+cd Todo-App
+```
+
+- make virtual Environment:
+
+``` commandline
+python -m venv .venv 
+```
+
+- (Linux) Active your venv:
+
+```commandline
+source ./venv/bin/activate
+```
+
+- clone the Project:
+
+```commandline
+git clone https://github.com/Amirmahdikahdouii/Todo-App-DRF.git
+```
+
+- install requirements:
+
+```
+pip install requirements.txt
+```
+
+- migrate all the changes:
+
+```commandline
+python manage.py migrate
+```
+
+- run & enjoy:
+
+```
+python manage.py runserver 
+```
 
 ## Support me
 
 Please give Star to this Repo and make sure you have followed my account for more.
-Thanks!
+Thanks :heart:
