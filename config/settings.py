@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # Apps
     'tasks.apps.TasksConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -113,3 +114,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
 
 }
+
+# Custom Authentication System
+AUTH_USER_MODEL = "accounts.User"
