@@ -7,13 +7,86 @@
 
 ## Endpoints:
 
-- /api/tasks/ ==> list of all tasks
-- /api/tasks/&lt;pk&gt; ==> task with pk lookup
+- /api/tasks/ <br>
+  <p>
+  This EndPoint will be able to get list of Tasks and
+  create one.
+  For getting list of Tasks, use GET HTTP Method:
+  <br>
+  <code>
+  $ curl -X GET http://127.0.0.1:8000/api/tasks/  
+  </code>
+  <br>
+  Response:
+  <code>
+  [ <br>
+  {"id":1,"title":"first task","body":"Amir","completed":false,"created":"2023-02-15T20:11:45.210471Z","updated":"2023-02-15T20:11:45.210548Z"}
+  <br> ]
+  </code>
+  <br>
+  For create new Task, use POST HTTP Method:
+  <br>
+  <code>
+  $ curl -X POST -d '{"title": "title", "body": "Your Data", "completed": false}' http://127.0.0.1:8000/api/tasks  
+  </code>
+  <br>
+  Response:
+  <code>
+  {"title": "title", "body": "Your Data", "completed": false}
+  </code>
+  </p>
+- /api/tasks/&lt;pk&gt;
+<p>
+  This EndPoint will be able to Retrieve Task, Delete or update that!
+  For getting Task, use GET HTTP Method:
+  <br>
+  <code>
+  $ curl -X GET http://127.0.0.1:8000/api/tasks/1  
+  </code>
+  <br>
+  Response:
+  <code>
+  {"id":1,"title":"first task","body":"Amir","completed":false,"created":"2023-02-15T20:11:45.210471Z","updated":"2023-02-15T20:11:45.210548Z"}
+  </code>
+  <br>
+  For Update Task, use PUT HTTP Method:
+  <br>
+  <code>
+  $ curl -X PUT -d '{"title": "title", "body": "Your Data", "completed": false}' http://127.0.0.1:8000/api/tasks/1  
+  </code>
+  <br>
+  Response:
+  <code>
+  {"title": "title", "body": "Your Data", "completed": false}
+  </code>
+  <br>
+  For Partial Update Task, use PATCH HTTP Method:
+  <br>
+  <code>
+  $ curl -X PATCH -d '{"completed": true}' http://127.0.0.1:8000/api/tasks/1  
+  </code>
+  <br>
+  Response:
+  <code>
+  {"title": "title", "body": "Your Data", "completed": false}
+  </code>
+  <br>
+  For Delete Task, use DELETE HTTP Method:
+  <br>
+  <code>
+  $ curl -X DELETE http://127.0.0.1:8000/api/tasks/1  
+  </code>
+  <br>
+  Response:
+  <code>
+  204 Response
+  </code>
+  </p>
 
 ## Have Todo:
 
 - [x] Configure Model layer
-- [ ] Make Endpoints for making new tasks
+- [x] Make Endpoints for making new tasks
 - [ ] Add JWT Authentication
 - [ ] Make Profile for users
 - [ ] Make Front-End View With React and Bootstrap
