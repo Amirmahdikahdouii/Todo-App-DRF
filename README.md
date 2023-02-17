@@ -127,6 +127,7 @@ Response:
 
 - [x] Configure Model layer
 - [x] Make Endpoints for making new tasks
+- [x] Create Custom User Model
 - [ ] Add JWT Authentication
 - [ ] Make Profile for users
 - [ ] Make Front-End View With React and Bootstrap
