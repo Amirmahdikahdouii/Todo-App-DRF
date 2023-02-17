@@ -5,9 +5,12 @@ from .models import User
 class CustomUserBackend(BaseBackend):
     def authenticate(self, request, email=None, password=None):
         try:
-            return User.objects.get(email=email, password=password)
+            user = User.objects.get(email=email)
+            if user.check_password(password):
+                return user
         except User.DoesNotExist:
-            return None
+            pass
+        return None
 
     def get_user(self, pk):
         try:
