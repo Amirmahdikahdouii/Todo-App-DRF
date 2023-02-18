@@ -7,7 +7,7 @@ from rest_framework import routers
 from .views import TaskViewSet
 
 router = routers.SimpleRouter()
-router.register("tasks-api", TaskViewSet, basename="task")
+router.register("api-tasks", TaskViewSet, basename="task")
 
 app_name = "tasks"
 urlpatterns = [
