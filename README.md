@@ -57,7 +57,7 @@ Response:
 
 </p>
 
-- ***/api/tasks/&lt;pk&gt;***
+- ***/api/tasks/&lt;pk&gt;/***
 
 <p>
 This EndPoint will be able to Retrieve Task, Delete or update that!
@@ -86,7 +86,8 @@ For Update Task, use `PUT` HTTP Method:
 
 ```
   curl -X PUT -H "Content-Type: application/json" \
-  -d '{"title": "title", "body": "Your Data", "completed": true}' http://127.0.0.1:8000/api/tasks/1/  
+  -d '{"title": "title", "body": "Your Data", "completed": true}' \
+  http://127.0.0.1:8000/api/tasks/1/  
 ```
 
 Response:
@@ -205,7 +206,7 @@ EndPoint to get refresh, access and user instance with `POST` HTTP method.
 ```
 curl -X POST \
  -H "Content-Type: application/json" \
- -d'{"email": "amir@gmail.com", "password": "Alimardani33"}' \
+ -d'{"email": "amir@gmail.com", "password": "password"}' \
  http://127.0.0.1:8000/accounts/api/token/
 ```
 
