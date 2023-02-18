@@ -14,6 +14,26 @@ class TaskSerializers(serializers.ModelSerializer):
         }
         return data
 
+    def validate_user(self, user):
+        """
+        This Method is for validating user object that come from request data!
+        """
+        request = self.context.get("request", None)
+        if request is None:
+            # If your using shell to deserialize, change behaviour of this section
+            raise serializers.ValidationError({
+                "request": [
+                    'rest_framework request class is required!'
+                ]
+            })
+        if request.user != user and request.user.is_admin is False:
+            raise serializers.ValidationError({
+                "user": [
+                    'you\'re not allowed to create or change task for someone else!'
+                ]
+            })
+        return user
+
     class Meta:
         fields = "__all__"
         model = Task
