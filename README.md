@@ -15,6 +15,8 @@ create one.
 
 For getting list of Tasks, use `GET` HTTP Method:
 
+##### because of Authentication, you're able to `get` your own tasks!
+
 ```commandline
 curl -X GET http://127.0.0.1:8000/api/tasks/  
 ```
@@ -35,6 +37,8 @@ Response:
  ```
 
 For create new Task, use `POST` HTTP Method:
+
+##### because of Authentication, you're able to `create` your own task!
 
 ```
   curl -X POST -H "Content-Type: application/json" \
@@ -65,6 +69,8 @@ This EndPoint will be able to Retrieve Task, Delete or update that!
 
 For getting Task, use `GET` HTTP Method:
 
+##### because of Authentication, you're able to `get` your own task!
+
 ```
   curl -X GET http://127.0.0.1:8000/api/tasks/1/  
 ```
@@ -83,6 +89,8 @@ Response:
 ```
 
 For Update Task, use `PUT` HTTP Method:
+
+##### because of Authentication, you're able to `update` your own task!
 
 ```
   curl -X PUT -H "Content-Type: application/json" \
@@ -105,6 +113,8 @@ Response:
 
 For Partial Update Task, use `PATCH` HTTP Method:
 
+##### because of Authentication, you're able to `update` your own task!
+
 ```
   curl -X PATCH -H "Content-Type: application/json" \
   -d '{"title": "title updated with partial update"}' \
@@ -125,6 +135,8 @@ Response:
 ```
 
 For Delete Task, use `DELETE` HTTP Method:
+
+##### because of Authentication, you're able to `delete` your own task!
 
 ```
 curl -X DELETE http://127.0.0.1:8000/api/tasks/1/  
