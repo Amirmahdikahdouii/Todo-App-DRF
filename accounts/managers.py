@@ -20,3 +20,7 @@ class CustomUserManager(BaseUserManager):
         obj.is_admin = True
         obj.save()
         return obj
+
+    # Method to check email exists or not
+    def check_email_exist(self, email_value):
+        return self.filter(email=self.normalize_email(email_value)).exists()
