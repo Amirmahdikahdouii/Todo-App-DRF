@@ -263,6 +263,8 @@ curl -X POST \
 - [x] Make Endpoints for making new tasks
 - [x] Create Custom User Model
 - [x] Add JWT Authentication
+- [ ] Email confirmation Stage
+- [ ] Password Forget section and work with sending email in django
 - [ ] Make Profile for users
 - [ ] Make Front-End View With React and Bootstrap
 - [ ] Publish project into server
