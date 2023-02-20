@@ -33,3 +33,14 @@ class User(AbstractBaseUser):
     def has_module_perms(self, app_label):
         # We Will handle this later
         return True
+
+
+class VerifyEmail(models.Model):
+    email = models.EmailField(unique=True, max_length=250)
+    verify_key = models.CharField(max_length=100)
+    is_verified = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    verification_time = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.email
