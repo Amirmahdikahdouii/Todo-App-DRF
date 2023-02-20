@@ -148,9 +148,56 @@ Response:
 204 Response
 ```
 
+- ***/accounts/api/email-verify/send-verification-key/***
+
+This EndPoint is build to send verification email to users,
+allowed method is HTTP `post` method and send email to this endpoint,
+to send verification code to user email!
+
+Request data:
+
+```json
+{
+  "email": "user@email.com"
+}
+```
+
+Fetch Example:
+
+```
+curl -X POST -H "Content-Type: application/json" \
+ -d '{"email": "user@gmail.com"}' \
+ http:/127.0.0.1:8000/accounts/api/email-verify/send-verification-key/  
+```
+
+- ***/accounts/api/email-verify/send-verification-key/***
+
+This EndPoint is build to confirm verification email by users,
+allowed method is HTTP `put` method and send email and verify_key to this endpoint,
+to verify user email!
+
+Request Data:
+
+```json
+{
+  "email": "user@email.com",
+  "verify_key": "verify_key like: 123456"
+}
+```
+
+Fetch Example:
+
+```
+curl -X PUT -H "Content-Type: application/json" \
+ -d '{"email": "user@gmail.com", "verify_key": "801730"}' \
+ http:/127.0.0.1:8000/accounts/api/email-verify/confirm-verification-key/  
+```
+
 - ***/accounts/api/register/***
 
 EndPoint to create new user instance with `POST` Http Method:
+
+### user should verify email first, to register his account!
 
 ```
 curl -X POST -H "Content-Type: application/json" \
@@ -275,7 +322,7 @@ curl -X POST \
 - [x] Make Endpoints for making new tasks
 - [x] Create Custom User Model
 - [x] Add JWT Authentication
-- [ ] Email confirmation Stage
+- [x] Email Verification Stage
 - [ ] Password Forget section and work with sending email in django
 - [ ] Make Profile for users
 - [ ] Make Front-End View With React and Bootstrap

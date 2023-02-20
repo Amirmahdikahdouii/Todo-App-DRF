@@ -26,7 +26,7 @@ class SendVerificationEmailAPIView(CreateAPIView):
     def create(self, request, *args, **kwargs):
         import random
         verify_key = random.randint(111111, 999999)
-        user_email = request.POST.get('email')
+        user_email = request.data.get('email')
         serializer = self.serializer_class(data={'email': user_email, "verify_key": verify_key})
         if serializer.is_valid():
             serializer.save()
@@ -41,8 +41,8 @@ class ConfirmEmailVerificationAPIView(UpdateAPIView):
     permission_classes = [AllowAny]
 
     def update(self, request, *args, **kwargs):
-        email = request.POST.get("email")
-        verify_key = request.POST.get("verify_key")
+        email = request.data.get("email")
+        verify_key = request.data.get("verify_key")
         try:
             email_instance = VerifyEmail.objects.get(email=email)
         except VerifyEmail.DoesNotExist:
