@@ -315,6 +315,12 @@ source ./venv/bin/activate
 pip install requirements.txt
 ```
 
+##### if you have problem with installation use command below:
+
+```
+pip install -r requirements.txt
+```
+
 - migrate all the changes:
 
 ```commandline
