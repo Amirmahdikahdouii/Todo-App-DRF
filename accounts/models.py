@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
-from .managers import CustomUserManager
+
+# Model Managers
+from .managers import CustomUserManager, VerifyEmailManager
 
 
 class User(AbstractBaseUser):
@@ -41,6 +43,8 @@ class VerifyEmail(models.Model):
     is_verified = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     verification_time = models.DateTimeField(auto_now=True)
+
+    objects = VerifyEmailManager()
 
     def __str__(self):
         return self.email

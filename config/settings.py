@@ -133,3 +133,15 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer", "Token"),
     "TOKEN_OBTAIN_SERIALIZER": "accounts.serializers.CustomTokenObtainPairSerializer",
 }
+# Email Sending Config
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = "Todo-App-DRF Team"
+# Your Email User
+# EMAIL_HOST_USER = "Paste Here!"
+EMAIL_HOST_USER = "amirmahdikahdooi@gmail.com"
+# Your Email Password (key)
+# EMAIL_HOST_PASSWORD = "Paste Here!"
+EMAIL_HOST_PASSWORD = "jjnxdrqlfeonkllx"

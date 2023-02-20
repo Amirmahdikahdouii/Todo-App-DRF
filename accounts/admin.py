@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 # Import Model
-from .models import User
+from .models import User, VerifyEmail
 from django.contrib.auth.models import Group
 
 # Import Forms
@@ -34,3 +34,14 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)
+
+
+class VerifyEmailAdmin(admin.ModelAdmin):
+    class Meta:
+        model = VerifyEmail
+
+    list_display = ("email", "is_verified", "created")
+    list_filter = ("is_verified",)
+
+
+admin.site.register(VerifyEmail, VerifyEmailAdmin)
