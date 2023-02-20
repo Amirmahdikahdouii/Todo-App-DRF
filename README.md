@@ -285,16 +285,16 @@ curl -X POST \
 
 ## Usage:
 
-- make new Directory:
-
-```commandline 
-mkdir Todo-App
-```
-
-- Go to the Directory you created:
+- clone the Project:
 
 ```commandline
-cd Todo-App
+git clone https://github.com/Amirmahdikahdouii/Todo-App-DRF.git
+```
+
+- Go to the Directory created:
+
+```commandline
+cd Todo-App-DRF
 ```
 
 - make virtual Environment:
@@ -307,12 +307,6 @@ python -m venv .venv
 
 ```commandline
 source ./venv/bin/activate
-```
-
-- clone the Project:
-
-```commandline
-git clone https://github.com/Amirmahdikahdouii/Todo-App-DRF.git
 ```
 
 - install requirements:
