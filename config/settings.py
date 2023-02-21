@@ -140,8 +140,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = "Todo-App-DRF Team"
 # Your Email User
-# EMAIL_HOST_USER = "Paste Here!"
-EMAIL_HOST_USER = "amirmahdikahdooi@gmail.com"
+EMAIL_HOST_USER = "Paste Here!"
 # Your Email Password (key)
-# EMAIL_HOST_PASSWORD = "Paste Here!"
-EMAIL_HOST_PASSWORD = "jjnxdrqlfeonkllx"
+EMAIL_HOST_PASSWORD = "Paste Here!"
