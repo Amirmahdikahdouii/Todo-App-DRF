@@ -14,6 +14,11 @@ class TaskSerializers(serializers.ModelSerializer):
         }
         return data
 
+    def to_internal_value(self, data):
+        request = self.context.get("request", None)
+        data['user'] = request.user.id
+        return super().to_internal_value(data)
+
     def validate_user(self, user):
         """
         This Method is for validating user object that come from request data!

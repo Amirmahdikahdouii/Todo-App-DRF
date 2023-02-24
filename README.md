@@ -13,25 +13,32 @@
 This EndPoint will be able to get list of Tasks and
 create one.
 
+### paste your Token with "your_token_here" in commands above!
+
 For getting list of Tasks, use `GET` HTTP Method:
 
 ##### because of Authentication, you're able to `get` your own tasks!
 
-```commandline
-curl -X GET http://127.0.0.1:8000/api/tasks/  
+```
+curl -X GET -H "Authorization: Token your_token_here" http://127.0.0.1:8000/tasks/api-tasks/
 ```
 
 Response:
 
 ```json
-  [
+[
   {
-    "id": 1,
-    "title": "first task",
-    "body": "Amir",
+    "id": 7,
+    "title": "title",
+    "body": "body",
     "completed": false,
-    "created": "2023-02-15T20:11:45.210471Z",
-    "updated": "2023-02-15T20:11:45.210548Z"
+    "created": "2023-02-18T19:51:05.819786Z",
+    "updated": "2023-02-18T19:51:05.819869Z",
+    "user": {
+      "email": "amir@gmail.com",
+      "first_name": null,
+      "last_name": null
+    }
   }
 ]
  ```
@@ -42,8 +49,9 @@ For create new Task, use `POST` HTTP Method:
 
 ```
   curl -X POST -H "Content-Type: application/json" \
+  -H "Authorization: Token your_token_here" \
   -d '{"title": "title", "body": "Your Data", "completed": false}' \
-  http://127.0.0.1:8000/api/tasks/
+  http://127.0.0.1:8000/tasks/api-tasks/
 ```
 
 Response:
@@ -72,30 +80,7 @@ For getting Task, use `GET` HTTP Method:
 ##### because of Authentication, you're able to `get` your own task!
 
 ```
-  curl -X GET http://127.0.0.1:8000/api/tasks/1/  
-```
-
-Response:
-
-```json
-  {
-  "id": 1,
-  "title": "first task",
-  "body": "Amir",
-  "completed": false,
-  "created": "2023-02-15T20:11:45.210471Z",
-  "updated": "2023-02-15T20:11:45.210548Z"
-}
-```
-
-For Update Task, use `PUT` HTTP Method:
-
-##### because of Authentication, you're able to `update` your own task!
-
-```
-  curl -X PUT -H "Content-Type: application/json" \
-  -d '{"title": "title", "body": "Your Data", "completed": true}' \
-  http://127.0.0.1:8000/api/tasks/1/  
+  curl -X GET -H "Authorization: Token your_token_here" http://127.0.0.1:8000/tasks/api-tasks/1/
 ```
 
 Response:
@@ -105,9 +90,43 @@ Response:
   "id": 1,
   "title": "title",
   "body": "Your Data",
-  "completed": true,
-  "created": "2023-02-17T13:25:34.615685Z",
-  "updated": "2023-02-18T11:43:54.343544Z"
+  "completed": false,
+  "created": "2023-02-24T20:50:11.277838Z",
+  "updated": "2023-02-24T20:50:11.277922Z",
+  "user": {
+    "email": "amir@gmail.com",
+    "first_name": null,
+    "last_name": null
+  }
+}
+```
+
+For Update Task, use `PUT` HTTP Method:
+
+##### because of Authentication, you're able to `update` your own task!
+
+```
+  curl -X PUT -H "Content-Type: application/json" \
+  -H "Authorization: Token your_token_here" \
+  -d '{"title": "title Updated", "body": "Your Data Updated", "completed": false}' \
+  http://127.0.0.1:8000/tasks/api-tasks/1/ 
+```
+
+Response:
+
+```json
+{
+  "id": 1,
+  "title": "title Updated",
+  "body": "Your Data Updated",
+  "completed": false,
+  "created": "2023-02-24T20:50:11.277838Z",
+  "updated": "2023-02-24T21:22:05.206567Z",
+  "user": {
+    "email": "amir@gmail.com",
+    "first_name": null,
+    "last_name": null
+  }
 }
 ```
 
@@ -117,8 +136,9 @@ For Partial Update Task, use `PATCH` HTTP Method:
 
 ```
   curl -X PATCH -H "Content-Type: application/json" \
-  -d '{"title": "title updated with partial update"}' \
-  http://127.0.0.1:8000/api/tasks/1/
+  -H "Authorization: Token your_token_here" \
+  -d '{"completed": true}' \
+  http://127.0.0.1:8000/tasks/api-tasks/1/ 
   ```
 
 Response:
@@ -126,11 +146,16 @@ Response:
 ```json
 {
   "id": 1,
-  "title": "title updated with partial update",
-  "body": "Your Data",
+  "title": "title Updated",
+  "body": "Your Data Updated",
   "completed": true,
-  "created": "2023-02-17T13:25:34.615685Z",
-  "updated": "2023-02-18T11:45:57.212193Z"
+  "created": "2023-02-24T20:50:11.277838Z",
+  "updated": "2023-02-24T21:23:30.710451Z",
+  "user": {
+    "email": "amir@gmail.com",
+    "first_name": null,
+    "last_name": null
+  }
 }
 ```
 
@@ -139,7 +164,9 @@ For Delete Task, use `DELETE` HTTP Method:
 ##### because of Authentication, you're able to `delete` your own task!
 
 ```
-curl -X DELETE http://127.0.0.1:8000/api/tasks/1/  
+curl -X DELETE \
+ -H "Authorization: Token your_token_here" \
+ http://127.0.0.1:8000/tasks/api-tasks/1/  
 ```
 
 Response:
